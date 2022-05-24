@@ -24,12 +24,15 @@ Product.init(
       }
     },
     product_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       allowNull: false,
+      validate: {
+        isDecimal: true,
+      }
     },
     stock: {
       type: DataTypes.INTEGER,
